@@ -3,13 +3,21 @@ import React from "react";
 import BurgerIngredient from "./BurgerIngredient/BurgerIngredient";
 
 const burger = (props) => {
-  const transformedIngredients = Object.keys(props.ingredients).map(
-    (eachKey) => {
+  let transformedIngredients = Object.keys(props.ingredients)
+    .map((eachKey) => {
       return [...Array(props.ingredients[eachKey])].map((_, index) => {
         return <BurgerIngredient key={eachKey + index} type={eachKey} />;
       });
-    }
-  );
+    })
+    .reduce((prevArr, nextEl) => {
+      return prevArr.concat(nextEl);
+    }, []);
+
+  if (transformedIngredients.length === 0) {
+    transformedIngredients = <p>Please start adding ingredients</p>;
+  }
+
+  console.log(transformedIngredients);
 
   return (
     <div className="Burger">
