@@ -3,7 +3,9 @@ import React from "react";
 const buildControl = (props) => (
   <div className="BuildControl">
     <div className="Label">{props.label}</div>
-    <button className="Less">Less</button>
+    <button onClick={props.removed} className="Less" disabled={props.disabled}>
+      Less
+    </button>
     <button onClick={props.added} className="More">
       More
     </button>
