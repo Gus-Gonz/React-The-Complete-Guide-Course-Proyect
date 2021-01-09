@@ -1,11 +1,13 @@
 import React from "react";
 
-const buildControls = (props) => (
+const buildControl = (props) => (
   <div className="BuildControl">
     <div className="Label">{props.label}</div>
     <button className="Less">Less</button>
-    <button className="More">More</button>
+    <button onClick={props.added} className="More">
+      More
+    </button>
   </div>
 );
 
-export default buildControls;
+export default buildControl;
