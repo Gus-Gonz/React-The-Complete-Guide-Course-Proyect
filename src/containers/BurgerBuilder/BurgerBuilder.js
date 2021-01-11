@@ -24,6 +24,7 @@ class BulgerBuilder extends Component {
     },
     totalPrice: 4,
     purchasable: false,
+    purchasing: false,
   };
 
   updatePruchaseState(ingredients) {
@@ -70,6 +71,10 @@ class BulgerBuilder extends Component {
     this.updatePruchaseState(updatedIngredients);
   };
 
+  purchaseHandler = () => {
+    this.setState({ purchasing: true });
+  };
+
   render() {
     const disabledInfo = {
       ...this.state.ingredients,
@@ -81,7 +86,7 @@ class BulgerBuilder extends Component {
 
     return (
       <Aux>
-        <Modal>
+        <Modal show={this.state.purchasing}>
           <OrderSummary ingredients={this.state.ingredients} />
         </Modal>
         <Burger ingredients={this.state.ingredients} />
@@ -90,6 +95,7 @@ class BulgerBuilder extends Component {
           ingredientRemoved={this.removeIngredientHandler}
           disabled={disabledInfo}
           purchasable={this.state.purchasable}
+          ondered={this.purchaseHandler}
           price={this.state.totalPrice}
         />
       </Aux>
