@@ -5,7 +5,7 @@ body {
 }
 
 .content {
-  margin-top: 16px;
+  margin-top: 72px;
 }
 
 /* BURGER  */
@@ -332,4 +332,76 @@ body {
 
 .Danger {
   color: #944317;
+}
+
+/* Toolbar */
+
+.Toolbar {
+  height: 56px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #703b09;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 90;
+}
+
+.Toolbar nav {
+  height: 100%;
+}
+
+/* Logo */
+
+.Logo {
+  background-color: white;
+  padding: 8px;
+  height: 80%;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.Logo img {
+  height: 100%;
+}
+
+/* Nav Item */
+
+.NavItems {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.NavigationItem {
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.NavigationItem a {
+  color: white;
+  text-decoration: none;
+  height: 100%;
+  padding: 16px 10px;
+  border-bottom: 4px solid transparent;
+  box-sizing: border-box;
+  display: block;
+}
+
+.NavigationItem a:hover,
+.NavigationItem a:active,
+.NavigationItem a.active {
+  background-color: #8f5c2c;
+  border-bottom: 4px solid #40a4c8;
+  color: white;
 }
