@@ -102,7 +102,7 @@ class BulgerBuilder extends Component {
       deliveryMethod: "fastest",
     };
 
-    axios.post("/orders.n", order).then(
+    axios.post("/orders.json", order).then(
       (response) => {
         this.setState({ loading: false, purchasing: false });
       },
