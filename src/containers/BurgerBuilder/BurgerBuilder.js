@@ -91,33 +91,31 @@ class BulgerBuilder extends Component {
   };
 
   purchaseContinueHandler = () => {
-    // alert("YOU CONTINUE !!");
-    this.setState({ loading: true });
-
-    const order = {
-      ingredients: this.state.ingredients,
-      price: this.state.totalPrice.toFixed(2),
-      customer: {
-        name: "GusGonz",
-        address: {
-          street: "TestStreet 1",
-          zipCode: "41351",
-          country: "Germany",
-        },
-        email: "Test@Test.com",
-      },
-      deliveryMethod: "fastest",
-    };
-
-    axios.post("/orders.json", order).then(
-      (response) => {
-        this.setState({ loading: false, purchasing: false });
-      },
-
-      (error) => {
-        this.setState({ loading: false, purchasing: false });
-      }
-    );
+    // // alert("YOU CONTINUE !!");
+    // this.setState({ loading: true });
+    // const order = {
+    //   ingredients: this.state.ingredients,
+    //   price: this.state.totalPrice.toFixed(2),
+    //   customer: {
+    //     name: "GusGonz",
+    //     address: {
+    //       street: "TestStreet 1",
+    //       zipCode: "41351",
+    //       country: "Germany",
+    //     },
+    //     email: "Test@Test.com",
+    //   },
+    //   deliveryMethod: "fastest",
+    // };
+    // axios.post("/orders.json", order).then(
+    //   (response) => {
+    //     this.setState({ loading: false, purchasing: false });
+    //   },
+    //   (error) => {
+    //     this.setState({ loading: false, purchasing: false });
+    //   }
+    // );
+    this.props.history.push("/checkout");
   };
 
   render() {
