@@ -18,11 +18,12 @@ class ContactData extends Component {
   };
 
   orderHandler = (event) => {
+    console.log("inside ContactData " + this.props.price);
     event.preventDefault();
     this.setState({ loading: true });
     const order = {
       ingredients: this.props.ingredients,
-      price: this.props.price.toFixed(2),
+      price: parseFloat(this.props.price).toFixed(2),
       customer: {
         name: "GusGonz",
         address: {
