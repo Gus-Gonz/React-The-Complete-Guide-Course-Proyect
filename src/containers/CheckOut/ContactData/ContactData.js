@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import Button from "../../../components/UI/Button/Button";
-import Spinner from "../../../components/UI/Spinner/Spinner";
-import classes from "./ContactData.css";
+import Button from "../../../components/Ui/Button/Button";
+import Spinner from "../../../components/Ui/Spinner/Spinner";
+import "./ContactData.css";
 import axios from "../../../axios-orders";
-import Input from "../../../components/UI/Input/Input";
+import Input from "../../../components/Ui/Input/Input";
 
 class ContactData extends Component {
   state = {
@@ -205,7 +205,7 @@ class ContactData extends Component {
       form = <Spinner />;
     }
     return (
-      <div className={classes.ContactData}>
+      <div className={"ContactData"}>
         <h4>Enter your Contact Data</h4>
         {form}
       </div>
