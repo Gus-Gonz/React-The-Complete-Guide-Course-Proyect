@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import Aux from "../../hoc/Auxilary/Auxilary";
+import axios from "../../axios-orders";
 
 import Burger from "../../components/Burger/Burger";
 import BuildControls from "../../components/Burger/BuildControls/BuildControls";
@@ -8,27 +9,15 @@ import Modal from "../../components/Ui/Modal/Modal";
 import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
 import Spinner from "../../components/Ui/Spinner/Spinner";
 import withErrorHandlder from "../../hoc/withErrorHandler/withErrorHandler";
-import axios from "../../axios-orders";
 import { connect } from "react-redux";
 import * as burgerBuilderActions from "../../store/actions/index";
 
 class BulgerBuilder extends Component {
   state = {
     purchasing: false,
-    loading: false,
-    error: false,
   };
 
-  componentDidMount() {
-    // axios
-    //   .get(
-    //     "https://react-my-burger-a8da6-default-rtdb.firebaseio.com/ingredients.json"
-    //   )
-    //   .then((response) => {
-    //     this.setState({ ingredients: response.data });
-    //   })
-    //   .catch((error) => this.setState({ error: true }));
-  }
+  componentDidMount() {}
 
   updatePruchaseState(ingredients) {
     const sum = Object.keys(ingredients)
@@ -88,10 +77,6 @@ class BulgerBuilder extends Component {
           ingredients={this.props.ings}
         />
       );
-    }
-
-    if (this.state.loading) {
-      orderSummary = <Spinner />;
     }
 
     return (
