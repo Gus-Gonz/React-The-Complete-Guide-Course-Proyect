@@ -37,6 +37,25 @@ const reducer = (state = initState, action) => {
         purchased: false,
       };
 
+    case actionTypes.FECTH_ORDERS_START:
+      return {
+        ...state,
+        loading: true,
+      };
+
+    case actionTypes.FECTH_ORDERS_SUCCESS:
+      return {
+        ...state,
+        orders: action.orders,
+        loading: false,
+      };
+
+    case actionTypes.FECTH_ORDERS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+      };
+
     default:
       return state;
   }
