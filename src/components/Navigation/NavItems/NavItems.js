@@ -7,7 +7,7 @@ const navItems = ({ isAuth }) => (
     <NavItem link="/" exact>
       Burger Builder
     </NavItem>
-    <NavItem link="/orders">Orders</NavItem>
+    {isAuth ? <NavItem link="/orders">Orders</NavItem> : null}
     {!isAuth ? (
       <NavItem link="/auth">Authenticate</NavItem>
     ) : (
