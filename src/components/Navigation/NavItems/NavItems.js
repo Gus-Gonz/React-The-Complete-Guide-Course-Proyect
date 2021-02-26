@@ -11,7 +11,7 @@ const navItems = ({ isAuth }) => (
     {!isAuth ? (
       <NavItem link="/auth">Authenticate</NavItem>
     ) : (
-      <NavLink link="/logout">Logout</NavLink>
+      <NavItem link="/logout">Logout</NavItem>
     )}
   </ul>
 );

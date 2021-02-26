@@ -6,4 +6,4 @@ export {
 
 export { purchaseBurger, purchaseInit, fecthOrders } from "./order";
 
-export { auth } from "./auth";
+export { auth, logout } from "./auth";
