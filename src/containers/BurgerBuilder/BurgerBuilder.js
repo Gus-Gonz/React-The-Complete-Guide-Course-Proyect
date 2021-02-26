@@ -30,7 +30,11 @@ class BulgerBuilder extends Component {
   }
 
   purchaseHandler = () => {
-    this.setState({ purchasing: true });
+    if (this.props.isAuth) {
+      this.setState({ purchasing: true });
+    } else {
+      this.props.history.push("/auth");
+    }
   };
 
   purchaseCancelHandler = () => {
@@ -69,6 +73,7 @@ class BulgerBuilder extends Component {
             purchasable={this.updatePruchaseState(this.props.ings)}
             ondered={this.purchaseHandler}
             price={this.props.price}
+            isAuth={this.props.isAuth}
           />
         </Aux>
       );
@@ -100,6 +105,7 @@ const mapStateToProps = (state) => {
     ings: state.burgerBuilder.ingredients,
     price: state.burgerBuilder.totalPrice,
     error: state.burgerBuilder.error,
+    isAuth: state.auth.token !== null,
   };
 };
 
