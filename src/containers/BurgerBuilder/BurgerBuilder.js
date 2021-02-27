@@ -33,6 +33,7 @@ class BulgerBuilder extends Component {
     if (this.props.isAuth) {
       this.setState({ purchasing: true });
     } else {
+      this.props.onSetAuthRedirectPath("/checkout");
       this.props.history.push("/auth");
     }
   };
@@ -116,6 +117,8 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(actions.removeIngredient(ingName)),
     onInitPurchase: () => dispatch(actions.purchaseInit()),
     onInitIngredients: () => dispatch(actions.initIngredients()),
+    onSetAuthRedirectPath: (path) =>
+      dispatch(actions.setAuthRedirectPath(path)),
   };
 };
 
