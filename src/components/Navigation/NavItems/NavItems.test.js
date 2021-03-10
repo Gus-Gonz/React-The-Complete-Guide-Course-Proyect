@@ -24,4 +24,13 @@ describe("<NavItems /> ", () => {
     });
     expect(wrapper.find(NavItem)).toHaveLength(3);
   });
+
+  it("should render 1 <NavItem/> that sends you to Logout if authenticated", () => {
+    wrapper.setProps({
+      isAuth: true,
+    });
+    expect(wrapper.contains(<NavItem link="/logout">Logout</NavItem>)).toEqual(
+      true
+    );
+  });
 });
